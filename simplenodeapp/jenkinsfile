@@ -12,9 +12,11 @@ pipeline {
         }
         stage('Docker build'){
             steps {
+                dir('simplenodeapp'){
                 sh '''
                     docker build . -t nodejsapp
                 '''
+                }
             }
         }
         

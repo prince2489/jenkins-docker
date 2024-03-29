@@ -46,3 +46,7 @@ sudo docker --version
 
 # Jenkins check
 dpkg -l | grep jenkins
+
+
+sudo groupadd docker
+sudo usermod -aG docker jenkins
