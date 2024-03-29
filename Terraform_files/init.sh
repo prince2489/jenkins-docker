@@ -23,19 +23,19 @@ sudo apt-get install -y jenkins
 sudo apt update
 
 # get the dependancy
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 
 # Add Docker's Official GPG Key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # Add Docker Repository
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" # need to press enter
 
 # Update Package again
 sudo apt update
 
 # Install Docker
-sudo apt install docker-ce
+sudo apt install docker-ce -y
 
 # Start Docker Service
 sudo systemctl start docker
