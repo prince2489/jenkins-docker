@@ -14,7 +14,16 @@ pipeline {
             steps {
                 dir('simplenodeapp'){
                 sh '''
-                    docker build . -t nodejsapp
+                    docker build . -t nodejsapp:v1
+                '''
+                }
+            }
+        }
+        stage('Docker Run'){
+            steps {
+                dir('simplenodeapp'){
+                sh '''
+                    docker run -d -p 7070:7070 nodejsapp:v1
                 '''
                 }
             }
