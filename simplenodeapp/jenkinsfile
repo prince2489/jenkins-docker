@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git checkout') {
+            steps {
+               git branch: 'main', credentialsId: 'github', url: 'https://github.com/prince2489/simplenodeapp.git'
+                // git branch: 'main', credentialsId: 'pankaj-githubnew', url: 'https://github.com/pankajdevops2489/simplenodeapp.git'
+            }
+        }
+        stage('Directory check') {
+            steps {
+                sh '''
+                ls
+                pwd
+                '''
+            }
+        }
+        
+    }
+}
